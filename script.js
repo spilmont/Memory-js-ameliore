@@ -17,6 +17,7 @@ var tbl1 = [];
 var test;
 var clickChoix =0;
 var dos;
+var aleatoire;
 
 
 
@@ -45,6 +46,26 @@ document.getElementById('choix').addEventListener( "change", function () {
     else if(document.getElementById("choix").value == "allies"){
         Cartes = choix3;
         dos =  "images/questionRouge.gif";
+        document.getElementById('choix').style.visibility ="hidden";
+        document.getElementById("choix").value = "defaut";
+    }
+    else if(document.getElementById("choix").value == "aleatoire"){
+        aleatoire = aleatoire=Math.floor(Math.random()*3);
+        switch (aleatoire) {
+            case 0:
+                Cartes = choix1;
+                dos =  "images/question.gif";
+                break;
+            case 1:
+                Cartes = choix2;
+                dos =  "images/questionNoir.gif";
+                break;
+            case 2:
+                Cartes = choix3;
+                dos =  "images/questionRouge.gif";
+                break;
+        }
+
         document.getElementById('choix').style.visibility ="hidden";
         document.getElementById("choix").value = "defaut";
     }
